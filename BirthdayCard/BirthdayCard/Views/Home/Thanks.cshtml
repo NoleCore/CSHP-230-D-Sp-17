@@ -1,0 +1,29 @@
+﻿@model BirthdayCard.Models.GuestResponse
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Birthday Card</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<h1>Birthday Card Sent</h1>
+<h2>From: @Model.To</h2>
+<h2>To: @Model.From</h2>
+<h2>Message: @Model.Message</h2>
+
