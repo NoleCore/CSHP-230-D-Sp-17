@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @if (Session != null && Session["User"] != null)
+    {
+        var user = (HelloWorld.Models.User)Session["User"];
+        <p>Logged in as: @User.Identity.Name></p>
+        <p> Logged in as @user.Email</p>
+    }
+    <h1>Product Information</h1>
+    <div style="padding:20px; border: solid medium black; font-size: 20pt">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ziggle.WebSite", "Ziggle.WebSite\Ziggle.WebSite.csproj", "{A41AC04B-B499-4522-BE7E-9BFA2177BD58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ziggle.Business", "Ziggle.Business\Ziggle.Business.csproj", "{01847A66-AF26-4A4E-9941-1BCAA59C2479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ziggle.ProductDatabase", "Ziggle.ProductDatabase\Ziggle.ProductDatabase.csproj", "{32622CC4-6EB8-4A4F-A432-5AE51B54728B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ziggle.Repository", "Ziggle.Repository\Ziggle.Repository.csproj", "{A55E29F0-4C26-4E32-A77B-F5AC114A9A49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A41AC04B-B499-4522-BE7E-9BFA2177BD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41AC04B-B499-4522-BE7E-9BFA2177BD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41AC04B-B499-4522-BE7E-9BFA2177BD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41AC04B-B499-4522-BE7E-9BFA2177BD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01847A66-AF26-4A4E-9941-1BCAA59C2479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01847A66-AF26-4A4E-9941-1BCAA59C2479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01847A66-AF26-4A4E-9941-1BCAA59C2479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01847A66-AF26-4A4E-9941-1BCAA59C2479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32622CC4-6EB8-4A4F-A432-5AE51B54728B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32622CC4-6EB8-4A4F-A432-5AE51B54728B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32622CC4-6EB8-4A4F-A432-5AE51B54728B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32622CC4-6EB8-4A4F-A432-5AE51B54728B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A55E29F0-4C26-4E32-A77B-F5AC114A9A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55E29F0-4C26-4E32-A77B-F5AC114A9A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55E29F0-4C26-4E32-A77B-F5AC114A9A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55E29F0-4C26-4E32-A77B-F5AC114A9A49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
