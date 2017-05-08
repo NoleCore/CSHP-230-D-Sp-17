@@ -11,26 +11,20 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2><a href="">Class List</a></h2>
+        <h2><a href="/Home/Class">Class List</a></h2>
         <p>
             See all our class offerings.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        
     </div>
     <div class="col-md-4">
-        <h2><a href="">Your enrolled classes</a></h2>
+        <h2><a href="/Home/StudentClasses">Your enrolled classes</a></h2>
         <p>See the classes you are enrolled in.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        
     </div>
     <div class="col-md-4">
-        <h2><a href="">Enroll in a class</a></h2>
+        <h2><a href="/Home/EnrollInClass">Enroll in a class</a></h2>
         <p>Take a new class.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        
     </div>
-@foreach (var classes in Model.Classes)
-    {
-    <div class="col-md-4">
-        <h2>@Html.ActionLink(classes.Name, "class", new { id = classes.Id })</h2>
-    </div>
-    }
 </div>

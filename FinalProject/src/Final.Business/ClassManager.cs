@@ -13,11 +13,15 @@ namespace Final.Business
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
 
-        public ClassModel(int id, string name)
+        public ClassModel(int id, string name, string description, decimal price)
         {
             Id = id;
             Name = name;
+            Description = description;
+            Price = price;
         }
     }
 
@@ -35,7 +39,7 @@ namespace Final.Business
             get
             {
                 return classRepository.Classes
-                                         .Select(t => new ClassModel(t.Id, t.Name))
+                                         .Select(t => new ClassModel(t.Id, t.Name, t.Description, t.Price))
                                          .ToArray();
             }
         }
@@ -43,7 +47,7 @@ namespace Final.Business
         public ClassModel Class(int classId)
         {
             var classModel = classRepository.Class(classId);
-            return new ClassModel(classModel.Id, classModel.Name);
+            return new ClassModel(classModel.Id, classModel.Name, classModel.Description, classModel.Price);
         }
     }
 }

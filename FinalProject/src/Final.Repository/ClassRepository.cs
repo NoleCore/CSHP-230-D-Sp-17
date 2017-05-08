@@ -12,6 +12,8 @@ namespace Final.Repository
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
     }
 
     public class ClassRepository : IClassRepository
@@ -21,7 +23,7 @@ namespace Final.Repository
             get
             {
                 return DatabaseAccessor.Instance.Classes
-                                               .Select(t => new ClassModel { Id = t.ClassId, Name = t.ClassName })
+                                               .Select(t => new ClassModel { Id = t.ClassId, Name = t.ClassName, Description = t.ClassDescription, Price = t.ClassPrice })
                                                .ToArray();
             }
         }
@@ -30,7 +32,7 @@ namespace Final.Repository
         {
             var classes = DatabaseAccessor.Instance.Classes // if ERROR rename classes to something else
                                                    .Where(t => t.ClassId == classId)
-                                                   .Select(t => new ClassModel { Id = t.ClassId, Name = t.ClassName })
+                                                   .Select(t => new ClassModel { Id = t.ClassId, Name = t.ClassName, Description = t.ClassDescription, Price = t.ClassPrice })
                                                    .First();
             return classes; // AND THEN also rename this classes to the same thing
         }

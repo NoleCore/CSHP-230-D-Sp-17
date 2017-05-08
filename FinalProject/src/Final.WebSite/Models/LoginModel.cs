@@ -7,7 +7,7 @@ namespace Final.WebSite.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Email")]
         public string UserName { get; set; }
 
         [Required]

@@ -9,6 +9,6 @@ namespace Final.WebSite.Models
     {
         public ClassModel Class { get; set; }
         public SchoolModel[] Users { get; set; }
-        public ClassModel[] Classes { get; set; }
+        //public ClassModel[] Classes { get; set; }
     }
 }

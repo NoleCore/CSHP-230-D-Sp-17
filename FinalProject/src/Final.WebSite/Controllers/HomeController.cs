@@ -20,29 +20,21 @@ namespace Final.WebSite.Controllers
             this.userManager = userManager;
         }
 
-        public ActionResult Class(int id)
+        public ActionResult Class()
         {
-            var classes = classManager.Class(id);
-            var users = schoolManager
-                                .ForClass(id)
-                                .Select(t =>
-                                    new Final.WebSite.Models.SchoolModel
-                                    {
-                                        Id = t.Id,
-                                        Name = t.Name,
-                                        
-                                    }).ToArray();
-
-            var model = new ClassViewModel
-            {
-                Class = new Final.WebSite.Models.ClassModel(classes.Id, classes.Name),
-                Users = users
-            };
-
+            var classes = classManager.Classes
+                                            .Select(t => new Final.WebSite.Models.ClassModel(t.Id, t.Name, t.Description, t.Price))
+                                            .ToArray();
+            var model = new IndexModel { Classes = classes };
             return View(model);
         }
 
         public ActionResult LogIn()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
         {
             return View();
         }
@@ -82,7 +74,7 @@ namespace Final.WebSite.Controllers
         public ActionResult Index()
         {
             var classes = classManager.Classes
-                                            .Select(t => new Final.WebSite.Models.ClassModel(t.Id, t.Name))
+                                            .Select(t => new Final.WebSite.Models.ClassModel(t.Id, t.Name, t.Description, t.Price))
                                             .ToArray();
             var model = new IndexModel { Classes = classes };
             return View(model);
@@ -100,6 +92,24 @@ namespace Final.WebSite.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult EnrollInClass()
+        {
+            var classes = classManager.Classes
+                                            .Select(t => new Final.WebSite.Models.ClassModel(t.Id, t.Name, t.Description, t.Price))
+                                            .ToArray();
+            var model = new IndexModel { Classes = classes };
+            return View(model);
+        }
+
+        public ActionResult StudentClasses()
+        {
+            var classes = classManager.Classes
+                                            .Select(t => new Final.WebSite.Models.ClassModel(t.Id, t.Name, t.Description, t.Price))
+                                            .ToArray();
+            var model = new IndexModel { Classes = classes };
+            return View(model);
         }
     }
 }
