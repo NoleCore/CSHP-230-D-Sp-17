@@ -1,0 +1,14 @@
+﻿@model Final.WebSite.Models.ClassViewModel
+
+@{
+    ViewBag.Title = Model.Class.Name;
+}
+
+<h2>@Model.Class.Name</h2>
+@foreach (var classes in Model.Class)
+{
+    <p>
+        @classes.ClassName - @string.Format("{0:C}", classes.ClassPrice)
+        @Html.ActionLink("Add To Cart", "AddToCart", new { id = classes.Id })
+    </p>
+}
