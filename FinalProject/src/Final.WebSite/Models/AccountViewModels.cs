@@ -65,7 +65,7 @@ namespace Final.WebSite.Models
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
+        
         [Display(Name = "Email")]
         public string Email { get; set; }
 

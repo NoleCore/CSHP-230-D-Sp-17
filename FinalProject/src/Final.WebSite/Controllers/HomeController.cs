@@ -13,11 +13,37 @@ namespace Final.WebSite.Controllers
         private readonly IClassManager classManager;
         private readonly ISchoolManager schoolManager;
         private readonly IUserManager userManager;
+        private object registerViewModel;
         public HomeController(IClassManager classManager, ISchoolManager schoolManager, IUserManager userManager)
         {
             this.classManager = classManager;
             this.schoolManager = schoolManager;
             this.userManager = userManager;
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel registerViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = userManager.Register(registerViewModel.Email, registerViewModel.Password);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "User not abled to be registered.");
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+
+            return View(registerViewModel);
         }
 
         public ActionResult Class()
@@ -30,11 +56,6 @@ namespace Final.WebSite.Controllers
         }
 
         public ActionResult LogIn()
-        {
-            return View();
-        }
-
-        public ActionResult Register()
         {
             return View();
         }

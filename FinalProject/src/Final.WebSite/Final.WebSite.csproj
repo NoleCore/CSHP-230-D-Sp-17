@@ -179,7 +179,6 @@
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Register.cs" />
     <Compile Include="Models\SchoolModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

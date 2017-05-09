@@ -32,6 +32,13 @@ namespace Final.Repository
 
         public UserModel Register(string email, string password)
         {
+            var existingUser = DatabaseAccessor.Instance.Users.FirstOrDefault(t => t.UserEmail.ToLower() == email);
+
+            if (existingUser != null)
+            {
+                return null;
+            }
+
             var user = DatabaseAccessor.Instance.Users
                     .Add(new Final.ProductDatabase.User { UserEmail = email, UserPassword = password });
 

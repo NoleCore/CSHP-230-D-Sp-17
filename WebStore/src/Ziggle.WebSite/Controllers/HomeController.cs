@@ -13,12 +13,38 @@ namespace Ziggle.WebSite.Controllers
         private readonly ICategoryManager categoryManager;
         private readonly IProductManager productManager;
         private readonly IUserManager userManager;
+        private object registerViewModel;
 
         public HomeController(ICategoryManager categoryManager, IProductManager productManager, IUserManager userManager)
         {
             this.categoryManager = categoryManager;
             this.productManager = productManager;
             this.userManager = userManager;
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel registerViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = userManager.Register(registerViewModel.Email, registerViewModel.Password);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "User not abled to be registered.");
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+
+            return View(registerViewModel);
         }
 
         public ActionResult LogIn()
